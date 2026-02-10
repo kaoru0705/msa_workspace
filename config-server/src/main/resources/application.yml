@@ -1,0 +1,33 @@
+#[Config Server의 목적]
+# Config Server가 Git 저장소에서 설정을 읽어, 각 마이크로 서비스(product-service, order-service)에 설정 정보를 제공한다.
+
+#---------------------------------------------------------------------------
+# [ 가동 순서 ]
+# Config Server -> Eureka -> 마이크로 서비스들 -> Gateway 순으로...
+#---------------------------------------------------------------------------
+
+server:
+  port: 8881
+
+spring:
+  application:
+    name: config-server # 이 애플리케이션의 이름 ( 중요함 yml 파이을 매핑할 규칙에 이름이 쓰임)
+
+# GitHub 정보
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kaoru0705/config-repo.git
+          default-label: main
+          username: kaoru0705
+          password: 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
+
+          clone-on-start: true # 서버 가동 시 즉시 git clone
+          force-pull: true # 매번 pull 을 강제하겠다. (변경된 설정 반영을 위해..)
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

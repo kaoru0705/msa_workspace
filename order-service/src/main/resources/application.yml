@@ -1,0 +1,8 @@
+# 이 이름이 깃에 있는 yml 파일과 매핑이 된다.
+spring:
+  application:
+    name: order-service
+
+  # MSA의 서비스들은 공통되거나, 중복된 설정은 Config Server로부터 제공받는다.
+  config:
+    import: "optional:configserver:http://localhost:8881" #Config Server의 접근 주소

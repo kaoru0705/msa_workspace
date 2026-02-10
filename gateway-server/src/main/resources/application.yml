@@ -1,0 +1,9 @@
+# Gateway 서버의 목적
+# 클라이언트의 요청을 각 서비스(product-service, order-service)로 라우팅
+spring:
+  application:
+    name: gateway-server #프로젝트의 명과 애플리케이션의 명칭은 동일하게 하는 게 좋다. 실행할 때 툴 내에서 디폴트를 사용하기 때문
+
+  # Gateway도 Config Server의 client이므로, 그 주소를 알아야 함.
+  config:
+    import: "optional:configserver:http://localhost:8881" #Config Server의 접근 주소
