@@ -19,7 +19,7 @@ spring:
       server:
         git:
           uri: https://github.com/kaoru0705/config-repo.git
-          default-label: main
+          default-label: main #http://localhost:8881/application/main
           username: kaoru0705
           password: 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
 
