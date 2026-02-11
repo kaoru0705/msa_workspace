@@ -29,6 +29,9 @@ dependencyManagement {
 }
 
 dependencies {
+    /*
+        MSA환경에서 Eureka, K8s(Kubernetics)의 경우 Config Server가 살아있는지 주기적으로 확인함, 이때 actuator가 필요함
+     */
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.cloud:spring-cloud-config-server'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
