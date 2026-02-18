@@ -6,3 +6,8 @@ spring:
   # MSA의 서비스들은 공통되거나, 중복된 설정은 Config Server로부터 제공받는다.
   config:
     import: "optional:configserver:http://localhost:8881" #Config Server의 접근 주소
+
+# 학원 이외의 개인용 pc는 이걸 붙이지 않으면 안 된다. 공유기가 가상 도메인을 못 찾음
+eureka:
+  instance:
+    hostname: localhost # 또는 내 컴퓨터의 아주 짧은 이름

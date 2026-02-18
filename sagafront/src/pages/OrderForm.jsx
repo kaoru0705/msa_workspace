@@ -4,7 +4,7 @@ export default function Login() {
   const productIdRef = useRef(null);
   const productNameRef = useRef(null);
 
-/*------------------------------------------
+  /*------------------------------------------
 주문 요청
 ------------------------------------------*/
   const order = () => {
@@ -13,6 +13,7 @@ export default function Login() {
       productName: productNameRef.current.value,
     };
 
+    // http://localhost:9000/api/orders sagashop과 연결됨
     fetch("http://localhost:9000/api/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

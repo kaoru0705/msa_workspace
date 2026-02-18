@@ -7,3 +7,4 @@ spring:
   # Gateway도 Config Server의 client이므로, 그 주소를 알아야 함.
   config:
     import: "optional:configserver:http://localhost:8881" #Config Server의 접근 주소
+
